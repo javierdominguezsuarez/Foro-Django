@@ -1,0 +1,72 @@
+<head>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<style>
+.contenedor_posts{
+    padding: 1%;
+    margin:auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+    
+}
+.post{
+    border-radius: 8px;
+
+    width:90%; 
+    height: 25%;
+    margin: 0.5%;
+    padding: 1%;
+    background-color: rgb(244, 244, 244);
+}
+.titulo{
+    height: 10%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.contenido{
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.fecha{
+    font-size: 12px;
+}
+div{
+    text-align: center;
+}
+body{
+    font-family: 'Poppins';
+    background-color: #ffffff;
+}
+.contenedor_posts{
+    width: 80%;
+    height: 90%;
+}
+</style>
+</head>
+<body>
+    <div ><h1>Bienvenido al foro</h1></div>
+    <div class = "contenedor_posts" >
+        {% for post in posts %}
+        <div class="post">
+            <div class = "titulo">
+                <p>{{post.titulo}}</p>
+                <p class="fecha">{{post.fecha}}</p>
+            </div>
+            
+            <div class = "contenido">
+                {{post.contenido}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
